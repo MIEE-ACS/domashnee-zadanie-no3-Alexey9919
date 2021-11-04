@@ -32,8 +32,14 @@ namespace Zagrebin_Dz3
             char[] sReverse = str.ToCharArray();
             Array.Reverse(sReverse);
             str = new string(sReverse);
-            tbB.Text = str;
+
+            var words = str.Split(new[] {  '.', ' ', ';', ':', '?' }, StringSplitOptions.RemoveEmptyEntries);
+            tbB.Text=(string.Join(" ", words.Reverse()));
+
+
+            
         }
+
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
